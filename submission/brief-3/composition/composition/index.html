@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>SyncWave - 5 Ways to Ship Faster</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #F8FAFC;
+        color: #0F172A;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #F8FAFC;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .ambient-glow {
+        position: absolute;
+        width: 1344px;
+        height: 756px;
+        border-radius: 50%;
+        filter: blur(140px);
+        opacity: 0.18;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="15"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Ambient Decorative Lighting Elements -->
+      <div class="ambient-glow" style="top: -15%; left: -10%; background: #2563EB;"></div>
+      <div class="ambient-glow" style="bottom: -20%; right: -10%; background: #2c64be;"></div>
+
+      <!-- Composition Scenes -->
+  <div id="scene_1_intro" class="clip" data-start="0" data-duration="3" style="position: absolute; inset: 0; padding: 100px 140px 100px 140px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_1_intro_inner" class="scene-inner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; width: 100%; height: 100%; text-align: center; max-width: 1640px;">
+      <div id="scene_1_intro_text" class="text-block" style="display: flex; flex-direction: column; gap: 20px; max-width: 100%; word-break: break-word;">
+  <div id="scene_1_intro_badge" class="badge-pill" style="align-self: flex-start; background: rgba(0, 0, 0, 0.06); color: #2563EB; font-size: 20px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #2563EB44; white-space: nowrap;">PROJECT MANAGEMENT REINVENTED</div>
+  <h1 id="scene_1_intro_heading" style="font-size: 64px; line-height: 1.3; font-weight: 800; color: #0F172A; margin: 0; letter-spacing: -0.02em;">Stop Managing Tasks. Start Shipping.</h1>
+  <p id="scene_1_intro_subtitle" style="font-size: 28px; line-height: 1.45; color: #475569; margin: 0; font-weight: 400;">SyncWave replaces fragmented trackers with one unified velocity workspace</p>
+</div>
+    </div>
+  </div>
+
+  <div id="scene_2_benefits" class="clip" data-start="3" data-duration="8" style="position: absolute; inset: 0; padding: 100px 140px 100px 140px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_2_benefits_inner" class="scene-inner" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; width: 100%; height: 100%; max-width: 1640px;">
+      <div id="scene_2_benefits_text" class="text-block" style="display: flex; flex-direction: column; gap: 20px; max-width: 100%; word-break: break-word;">
+  <div id="scene_2_benefits_badge" class="badge-pill" style="align-self: flex-start; background: rgba(0, 0, 0, 0.06); color: #2563EB; font-size: 20px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #2563EB44; white-space: nowrap;">5 CORE ADVANTAGES</div>
+  <h1 id="scene_2_benefits_heading" style="font-size: 64px; line-height: 1.3; font-weight: 800; color: #0F172A; margin: 0; letter-spacing: -0.02em;">Engineered for High-Output Teams</h1>
+  <p id="scene_2_benefits_subtitle" style="font-size: 28px; line-height: 1.45; color: #475569; margin: 0; font-weight: 400;">Built for modern engineering, design, and product organizations</p>
+  <div id="scene_2_benefits_callouts" style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px;">
+    <div class="scene_2_benefits_callout" style="display: flex; align-items: center; gap: 14px; font-size: 24px; color: #0F172A; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: #2563EB22; color: #2563EB; font-weight: 700; font-size: 20px; flex-shrink: 0;">✓</span>
+      <span>1. Zero-Friction Async Updates</span>
+    </div>
+    <div class="scene_2_benefits_callout" style="display: flex; align-items: center; gap: 14px; font-size: 24px; color: #0F172A; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: #2563EB22; color: #2563EB; font-weight: 700; font-size: 20px; flex-shrink: 0;">✓</span>
+      <span>2. Real-Time Sprint Velocity Graphs</span>
+    </div>
+    <div class="scene_2_benefits_callout" style="display: flex; align-items: center; gap: 14px; font-size: 24px; color: #0F172A; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: #2563EB22; color: #2563EB; font-weight: 700; font-size: 20px; flex-shrink: 0;">✓</span>
+      <span>3. Automated GitHub &amp; Linear Sync</span>
+    </div>
+    <div class="scene_2_benefits_callout" style="display: flex; align-items: center; gap: 14px; font-size: 24px; color: #0F172A; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: #2563EB22; color: #2563EB; font-weight: 700; font-size: 20px; flex-shrink: 0;">✓</span>
+      <span>4. AI-Driven Blocker Resolution</span>
+    </div>
+  </div>
+</div>
+      <div id="scene_2_benefits_visual" class="visual-block" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 760px;">
+  <div style="width: 100%; background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 20px; padding: 28px; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15);">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; padding: 18px;">
+        <div style="font-size: 24px; margin-bottom: 8px;">⚡</div>
+        <div style="font-size: 18px; font-weight: 700; color: #0F172A;">Instant Setup</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; padding: 18px;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🛡️</div>
+        <div style="font-size: 18px; font-weight: 700; color: #0F172A;">Zero Latency</div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div id="scene_3_summary_cta" class="clip" data-start="11" data-duration="4" style="position: absolute; inset: 0; padding: 100px 140px 100px 140px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_3_summary_cta_inner" class="scene-inner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; width: 100%; height: 100%; text-align: center; max-width: 1640px;">
+      <div id="scene_3_summary_cta_text" class="text-block" style="display: flex; flex-direction: column; gap: 20px; max-width: 100%; word-break: break-word;">
+  <div id="scene_3_summary_cta_badge" class="badge-pill" style="align-self: flex-start; background: rgba(0, 0, 0, 0.06); color: #2563EB; font-size: 20px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #2563EB44; white-space: nowrap;">JOIN 5,000+ FAST TEAMS</div>
+  <h1 id="scene_3_summary_cta_heading" style="font-size: 64px; line-height: 1.3; font-weight: 800; color: #0F172A; margin: 0; letter-spacing: -0.02em;">Level Up Your Team&#039;s Velocity</h1>
+  <p id="scene_3_summary_cta_subtitle" style="font-size: 28px; line-height: 1.45; color: #475569; margin: 0; font-weight: 400;">Get started in 60 seconds with one-click workspace import</p>
+</div>
+      <div id="scene_3_summary_cta_visual" class="visual-block" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 760px;">
+  <div style="width: 100%; display: flex; justify-content: center;">
+    <div style="background: #2563EB10; border: 2px solid #2563EB; border-radius: 24px; padding: 32px 48px; text-align: center;">
+      <div style="font-size: 20px; font-weight: 700; color: #2c64be; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">★ Verified Performance</div>
+      <div style="font-size: 28px; font-weight: 800; color: #0F172A;">Ready to Scale</div>
+    </div>
+  </div>
+</div>
+      <div id="cta_component" class="cta-block" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; margin-top: 24px; width: 100%; text-align: center;">
+  <div class="cta-badge" style="background: #2c64be22; color: #2c64be; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 18px; border-radius: 9999px; border: 1px solid #2c64be55;">NO CREDIT CARD REQUIRED</div>
+  <div class="cta-button" style="background: #2563EB; color: #FFFFFF; font-size: 32px; font-weight: 800; padding: 18px 44px; border-radius: 16px; box-shadow: 0 20px 35px -10px #2563EB88; letter-spacing: -0.01em; display: inline-flex; align-items: center; gap: 12px;">
+    <span>Start Free for 30 Days</span>
+    <span style="font-size: 1.1em;">→</span>
+  </div>
+  <div class="cta-subtext" style="font-size: 21.6px; color: #475569; font-weight: 500;">Unlimited users · Full feature access</div>
+  <div class="cta-url" style="font-size: 24px; color: #0F172A; font-weight: 700; font-family: monospace; letter-spacing: 0.05em; background: rgba(255,255,255,0.06); padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.08);">syncwave.io</div>
+</div>
+    </div>
+  </div>
+    </div>
+
+    <!-- Deterministic HyperFrames Animation Choreography -->
+    <script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+
+  // --- Motion for Scene: scene_1_intro (0s - 3.00s) ---
+  tl.fromTo("#scene_1_intro_text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.000);
+  tl.to("#scene_1_intro_inner", { scale: 1.015, duration: 0.925, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0.700);
+  tl.to("#scene_1_intro_inner", { opacity: 0, duration: 0.44999999999999996, ease: "power2.in" }, 2.550);
+  tl.set("#scene_1_intro_inner", { opacity: 0 }, 3.000);
+
+  // --- Motion for Scene: scene_2_benefits (3s - 11.00s) ---
+  tl.fromTo("#scene_2_benefits_text", { opacity: 0, y: 35 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 3.000);
+  tl.fromTo("#scene_2_benefits_visual", { opacity: 0, y: 35 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 3.150);
+  tl.fromTo(".scene_2_benefits_callout", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.12, ease: "power2.out" }, 3.200);
+  tl.to("#scene_2_benefits_visual", { filter: "brightness(1.12)", duration: 3.425, yoyo: true, repeat: 1, ease: "sine.inOut" }, 3.700);
+  tl.to("#scene_2_benefits_inner", { opacity: 0, duration: 0.45, ease: "power2.in" }, 10.550);
+  tl.set("#scene_2_benefits_inner", { opacity: 0 }, 11.000);
+
+  // --- Motion for Scene: scene_3_summary_cta (11s - 15.00s) ---
+  tl.fromTo("#scene_3_summary_cta_text", { opacity: 0, scale: 0.88 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.2)" }, 11.000);
+  tl.fromTo("#scene_3_summary_cta_visual", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.2)" }, 11.100);
+  tl.to("#scene_3_summary_cta_inner", { scale: 1.015, duration: 1.425, yoyo: true, repeat: 1, ease: "sine.inOut" }, 11.700);
+
+window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

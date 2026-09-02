@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Velvet Bean Roasters - Grand Opening Announcement</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #FAF5F0 0%, #EFE6DD 100%);
+        color: #2B1810;
+        font-family: "Playfair Display", Georgia, serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #FAF5F0 0%, #EFE6DD 100%);
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .ambient-glow {
+        position: absolute;
+        width: 756px;
+        height: 1344px;
+        border-radius: 50%;
+        filter: blur(140px);
+        opacity: 0.18;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="8"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Ambient Decorative Lighting Elements -->
+      <div class="ambient-glow" style="top: -15%; left: -10%; background: #6F4E37;"></div>
+      <div class="ambient-glow" style="bottom: -20%; right: -10%; background: #845d3a;"></div>
+
+      <!-- Composition Scenes -->
+  <div id="scene_1_intro" class="clip" data-start="0" data-duration="3" style="position: absolute; inset: 0; padding: 140px 80px 140px 80px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_1_intro_inner" class="scene-inner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 48px; width: 100%; height: 100%; text-align: center; max-width: 920px;">
+      <div id="scene_1_intro_text" class="text-block" style="display: flex; flex-direction: column; gap: 24px; max-width: 100%; word-break: break-word;">
+  <div id="scene_1_intro_badge" class="badge-pill" style="align-self: flex-start; background: rgba(0, 0, 0, 0.06); color: #6F4E37; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #6F4E3744; white-space: nowrap;">GRAND OPENING</div>
+  <h1 id="scene_1_intro_heading" style="font-size: 68px; line-height: 1.3; font-weight: 800; color: #2B1810; margin: 0; letter-spacing: -0.02em;">Velvet Bean Roasters</h1>
+  <p id="scene_1_intro_subtitle" style="font-size: 32px; line-height: 1.45; color: #475569; margin: 0; font-weight: 400;">Small-batch specialty coffee crafted with passion</p>
+</div>
+      <div id="scene_1_intro_visual" class="visual-block" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 100%;">
+  <div style="width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5); border: 1px solid rgba(0, 0, 0, 0.08); background: #FFFFFF;">
+    <img src="assets/scene_1_intro_visual.svg" alt="Cinematic warm aesthetic close-up of dark roasted coffee beans falling into a vintage copper artisanal roasting drum with soft morning sunlight." style="width: 100%; height: auto; max-height: 640px; object-fit: cover; display: block;" />
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div id="scene_2_details" class="clip" data-start="3" data-duration="2.5" style="position: absolute; inset: 0; padding: 140px 80px 140px 80px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_2_details_inner" class="scene-inner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 48px; width: 100%; height: 100%; text-align: left; max-width: 920px;">
+      <div id="scene_2_details_text" class="text-block" style="display: flex; flex-direction: column; gap: 24px; max-width: 100%; word-break: break-word;">
+  <div id="scene_2_details_badge" class="badge-pill" style="align-self: flex-start; background: rgba(0, 0, 0, 0.06); color: #6F4E37; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #6F4E3744; white-space: nowrap;">SAVE THE DATE</div>
+  <h1 id="scene_2_details_heading" style="font-size: 68px; line-height: 1.3; font-weight: 800; color: #2B1810; margin: 0; letter-spacing: -0.02em;">Opening October 12th</h1>
+  <p id="scene_2_details_subtitle" style="font-size: 32px; line-height: 1.45; color: #475569; margin: 0; font-weight: 400;">450 S. Santa Fe Ave · Downtown Arts District</p>
+  <div id="scene_2_details_callouts" style="display: flex; flex-direction: column; gap: 18px; margin-top: 8px;">
+    <div class="scene_2_details_callout" style="display: flex; align-items: center; gap: 14px; font-size: 26px; color: #2B1810; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; background: #6F4E3722; color: #6F4E37; font-weight: 700; font-size: 22px; flex-shrink: 0;">✓</span>
+      <span>Single-Origin Pour Overs</span>
+    </div>
+    <div class="scene_2_details_callout" style="display: flex; align-items: center; gap: 14px; font-size: 26px; color: #2B1810; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; background: #6F4E3722; color: #6F4E37; font-weight: 700; font-size: 22px; flex-shrink: 0;">✓</span>
+      <span>Artisan House Pastries</span>
+    </div>
+    <div class="scene_2_details_callout" style="display: flex; align-items: center; gap: 14px; font-size: 26px; color: #2B1810; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; background: #6F4E3722; color: #6F4E37; font-weight: 700; font-size: 22px; flex-shrink: 0;">✓</span>
+      <span>Complimentary Tasting Flights</span>
+    </div>
+  </div>
+</div>
+      <div id="scene_2_details_visual" class="visual-block" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 100%;">
+  <div style="width: 100%; background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 20px; padding: 28px; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15);">
+    <div style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+      <div style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; padding: 18px;">
+        <div style="font-size: 24px; margin-bottom: 8px;">⚡</div>
+        <div style="font-size: 18px; font-weight: 700; color: #2B1810;">Instant Setup</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; padding: 18px;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🛡️</div>
+        <div style="font-size: 18px; font-weight: 700; color: #2B1810;">Zero Latency</div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div id="scene_3_cta" class="clip" data-start="5.5" data-duration="2.5" style="position: absolute; inset: 0; padding: 140px 80px 140px 80px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_3_cta_inner" class="scene-inner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 48px; width: 100%; height: 100%; text-align: center; max-width: 920px;">
+      <div id="scene_3_cta_text" class="text-block" style="display: flex; flex-direction: column; gap: 24px; max-width: 100%; word-break: break-word;">
+  <div id="scene_3_cta_badge" class="badge-pill" style="align-self: flex-start; background: rgba(0, 0, 0, 0.06); color: #6F4E37; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #6F4E3744; white-space: nowrap;">JOIN US</div>
+  <h1 id="scene_3_cta_heading" style="font-size: 68px; line-height: 1.3; font-weight: 800; color: #2B1810; margin: 0; letter-spacing: -0.02em;">Experience Pure Craft</h1>
+  <p id="scene_3_cta_subtitle" style="font-size: 32px; line-height: 1.45; color: #475569; margin: 0; font-weight: 400;">First 100 guests receive a complimentary signature roast</p>
+</div>
+      <div id="scene_3_cta_visual" class="visual-block" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 100%;">
+  <div style="width: 100%; display: flex; justify-content: center;">
+    <div style="background: #6F4E3710; border: 2px solid #6F4E37; border-radius: 24px; padding: 32px 48px; text-align: center;">
+      <div style="font-size: 20px; font-weight: 700; color: #845d3a; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">★ Verified Performance</div>
+      <div style="font-size: 28px; font-weight: 800; color: #2B1810;">Ready to Scale</div>
+    </div>
+  </div>
+</div>
+      <div id="cta_component" class="cta-block" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; margin-top: 32px; width: 100%; text-align: center;">
+  <div class="cta-badge" style="background: #845d3a22; color: #845d3a; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 18px; border-radius: 9999px; border: 1px solid #845d3a55;">DOORS OPEN AT 7 AM</div>
+  <div class="cta-button" style="background: #6F4E37; color: #FFFFFF; font-size: 34px; font-weight: 800; padding: 20px 48px; border-radius: 16px; box-shadow: 0 20px 35px -10px #6F4E3788; letter-spacing: -0.01em; display: inline-flex; align-items: center; gap: 12px;">
+    <span>Visit Us This Saturday</span>
+    <span style="font-size: 1.1em;">→</span>
+  </div>
+  <div class="cta-subtext" style="font-size: 23.400000000000002px; color: #475569; font-weight: 500;">Doors open at 7:00 AM</div>
+  <div class="cta-url" style="font-size: 26px; color: #2B1810; font-weight: 700; font-family: monospace; letter-spacing: 0.05em; background: rgba(255,255,255,0.06); padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.08);">velvetbean.coffee</div>
+</div>
+    </div>
+  </div>
+    </div>
+
+    <!-- Deterministic HyperFrames Animation Choreography -->
+    <script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+
+  // --- Motion for Scene: scene_1_intro (0s - 3.00s) ---
+  tl.fromTo("#scene_1_intro_text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.000);
+  tl.fromTo("#scene_1_intro_visual", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.100);
+  tl.to("#scene_1_intro_inner", { scale: 1.015, duration: 0.925, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0.700);
+  tl.to("#scene_1_intro_inner", { opacity: 0, duration: 0.44999999999999996, ease: "power2.in" }, 2.550);
+  tl.set("#scene_1_intro_inner", { opacity: 0 }, 3.000);
+
+  // --- Motion for Scene: scene_2_details (3s - 5.50s) ---
+  tl.fromTo("#scene_2_details_text", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.625, ease: "power2.out" }, 3.000);
+  tl.fromTo("#scene_2_details_visual", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.625, ease: "power2.out" }, 3.100);
+  tl.fromTo(".scene_2_details_callout", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.12, ease: "power2.out" }, 3.200);
+  tl.to("#scene_2_details_inner", { opacity: 0, duration: 0.375, ease: "power2.in" }, 5.125);
+  tl.set("#scene_2_details_inner", { opacity: 0 }, 5.500);
+
+  // --- Motion for Scene: scene_3_cta (5.5s - 8.00s) ---
+  tl.fromTo("#scene_3_cta_text", { opacity: 0, scale: 0.88 }, { opacity: 1, scale: 1, duration: 0.625, ease: "back.out(1.2)" }, 5.500);
+  tl.fromTo("#scene_3_cta_visual", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.625, ease: "back.out(1.2)" }, 5.600);
+  tl.to("#scene_3_cta_inner", { scale: 1.015, duration: 0.750, yoyo: true, repeat: 1, ease: "sine.inOut" }, 6.125);
+
+window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

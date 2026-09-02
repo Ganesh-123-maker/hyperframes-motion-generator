@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pulse Analytics - Developer Platform Promo</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0B0F19 0%, #1E1035 100%);
+        color: #F8FAFC;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0B0F19 0%, #1E1035 100%);
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .ambient-glow {
+        position: absolute;
+        width: 1344px;
+        height: 756px;
+        border-radius: 50%;
+        filter: blur(140px);
+        opacity: 0.18;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="12"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Ambient Decorative Lighting Elements -->
+      <div class="ambient-glow" style="top: -15%; left: -10%; background: #A855F7;"></div>
+      <div class="ambient-glow" style="bottom: -20%; right: -10%; background: #C084FC;"></div>
+
+      <!-- Composition Scenes -->
+  <div id="scene_1_intro" class="clip" data-start="0" data-duration="3.5" style="position: absolute; inset: 0; padding: 100px 140px 100px 140px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_1_intro_inner" class="scene-inner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; width: 100%; height: 100%; text-align: center; max-width: 1640px;">
+      <div id="scene_1_intro_text" class="text-block" style="display: flex; flex-direction: column; gap: 20px; max-width: 100%; word-break: break-word;">
+  <div id="scene_1_intro_badge" class="badge-pill" style="align-self: flex-start; background: rgba(255, 255, 255, 0.08); color: #A855F7; font-size: 20px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #A855F744; white-space: nowrap;">NEXT-GEN PLATFORM</div>
+  <h1 id="scene_1_intro_heading" style="font-size: 64px; line-height: 1.3; font-weight: 800; color: #F8FAFC; margin: 0; letter-spacing: -0.02em;">Pulse Analytics</h1>
+  <p id="scene_1_intro_subtitle" style="font-size: 28px; line-height: 1.45; color: #94A3B8; margin: 0; font-weight: 400;">Real-Time Observability for Modern Engineering Teams</p>
+</div>
+    </div>
+  </div>
+
+  <div id="scene_2_features" class="clip" data-start="3.5" data-duration="4.5" style="position: absolute; inset: 0; padding: 100px 140px 100px 140px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_2_features_inner" class="scene-inner" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; width: 100%; height: 100%; max-width: 1640px;">
+      <div id="scene_2_features_text" class="text-block" style="display: flex; flex-direction: column; gap: 20px; max-width: 100%; word-break: break-word;">
+  <div id="scene_2_features_badge" class="badge-pill" style="align-self: flex-start; background: rgba(255, 255, 255, 0.08); color: #A855F7; font-size: 20px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #A855F744; white-space: nowrap;">POWERFUL INSIGHTS</div>
+  <h1 id="scene_2_features_heading" style="font-size: 64px; line-height: 1.3; font-weight: 800; color: #F8FAFC; margin: 0; letter-spacing: -0.02em;">Full-Stack Velocity &amp; Visibility</h1>
+  <p id="scene_2_features_subtitle" style="font-size: 28px; line-height: 1.45; color: #94A3B8; margin: 0; font-weight: 400;">Identify regressions before they reach your customers</p>
+  <div id="scene_2_features_callouts" style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px;">
+    <div class="scene_2_features_callout" style="display: flex; align-items: center; gap: 14px; font-size: 24px; color: #F8FAFC; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: #A855F722; color: #A855F7; font-weight: 700; font-size: 20px; flex-shrink: 0;">✓</span>
+      <span>Instant Query Tracing</span>
+    </div>
+    <div class="scene_2_features_callout" style="display: flex; align-items: center; gap: 14px; font-size: 24px; color: #F8FAFC; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: #A855F722; color: #A855F7; font-weight: 700; font-size: 20px; flex-shrink: 0;">✓</span>
+      <span>CI/CD Bottleneck Detection</span>
+    </div>
+    <div class="scene_2_features_callout" style="display: flex; align-items: center; gap: 14px; font-size: 24px; color: #F8FAFC; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: #A855F722; color: #A855F7; font-weight: 700; font-size: 20px; flex-shrink: 0;">✓</span>
+      <span>P99 Latency Heatmaps</span>
+    </div>
+  </div>
+</div>
+      <div id="scene_2_features_visual" class="visual-block" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 760px;">
+  <div style="width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5); border: 1px solid rgba(255, 255, 255, 0.1); background: #151D2E;">
+    <img src="assets/scene_2_features_visual.svg" alt="Sleek futuristic developer analytics dark mode UI dashboard showing glowing purple and cyan telemetry graphs, performance metrics, and code flow diagrams on ultra-clean matte surface." style="width: 100%; height: auto; max-height: 520px; object-fit: cover; display: block;" />
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div id="scene_3_cta" class="clip" data-start="8" data-duration="4" style="position: absolute; inset: 0; padding: 100px 140px 100px 140px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div id="scene_3_cta_inner" class="scene-inner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; width: 100%; height: 100%; text-align: center; max-width: 1640px;">
+      <div id="scene_3_cta_text" class="text-block" style="display: flex; flex-direction: column; gap: 20px; max-width: 100%; word-break: break-word;">
+  <div id="scene_3_cta_badge" class="badge-pill" style="align-self: flex-start; background: rgba(255, 255, 255, 0.08); color: #A855F7; font-size: 20px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 9999px; border: 1px solid #A855F744; white-space: nowrap;">GET STARTED</div>
+  <h1 id="scene_3_cta_heading" style="font-size: 64px; line-height: 1.3; font-weight: 800; color: #F8FAFC; margin: 0; letter-spacing: -0.02em;">Ship Faster, Debug Smarter</h1>
+  <p id="scene_3_cta_subtitle" style="font-size: 28px; line-height: 1.45; color: #94A3B8; margin: 0; font-weight: 400;">Join 10,000+ engineers streamlining their production pipelines</p>
+</div>
+      <div id="scene_3_cta_visual" class="visual-block" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 760px;">
+  <div style="width: 100%; display: flex; justify-content: center;">
+    <div style="background: #A855F715; border: 2px solid #A855F7; border-radius: 24px; padding: 32px 48px; text-align: center;">
+      <div style="font-size: 20px; font-weight: 700; color: #C084FC; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">★ Verified Performance</div>
+      <div style="font-size: 28px; font-weight: 800; color: #F8FAFC;">Ready to Scale</div>
+    </div>
+  </div>
+</div>
+      <div id="cta_component" class="cta-block" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; margin-top: 24px; width: 100%; text-align: center;">
+  <div class="cta-badge" style="background: #C084FC22; color: #C084FC; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 18px; border-radius: 9999px; border: 1px solid #C084FC55;">14-DAY PRO TRIAL</div>
+  <div class="cta-button" style="background: #A855F7; color: #F8FAFC; font-size: 32px; font-weight: 800; padding: 18px 44px; border-radius: 16px; box-shadow: 0 20px 35px -10px #A855F788; letter-spacing: -0.01em; display: inline-flex; align-items: center; gap: 12px;">
+    <span>Start Free Today</span>
+    <span style="font-size: 1.1em;">→</span>
+  </div>
+  <div class="cta-subtext" style="font-size: 21.6px; color: #94A3B8; font-weight: 500;">No credit card required · Open source friendly</div>
+  <div class="cta-url" style="font-size: 24px; color: #F8FAFC; font-weight: 700; font-family: monospace; letter-spacing: 0.05em; background: rgba(255,255,255,0.06); padding: 8px 20px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">pulseanalytics.dev</div>
+</div>
+    </div>
+  </div>
+    </div>
+
+    <!-- Deterministic HyperFrames Animation Choreography -->
+    <script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+
+  // --- Motion for Scene: scene_1_intro (0s - 3.50s) ---
+  tl.fromTo("#scene_1_intro_text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.000);
+  tl.to("#scene_1_intro_inner", { scale: 1.015, duration: 1.175, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0.700);
+  tl.to("#scene_1_intro_inner", { opacity: 0, duration: 0.45, ease: "power2.in" }, 3.050);
+  tl.set("#scene_1_intro_inner", { opacity: 0 }, 3.500);
+
+  // --- Motion for Scene: scene_2_features (3.5s - 8.00s) ---
+  tl.fromTo("#scene_2_features_text", { opacity: 0, y: 35 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 3.500);
+  tl.fromTo("#scene_2_features_visual", { opacity: 0, y: 35 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 3.650);
+  tl.fromTo(".scene_2_features_callout", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.12, ease: "power2.out" }, 3.700);
+  tl.to("#scene_2_features_visual", { filter: "brightness(1.12)", duration: 1.675, yoyo: true, repeat: 1, ease: "sine.inOut" }, 4.200);
+  tl.to("#scene_2_features_inner", { opacity: 0, duration: 0.45, ease: "power2.in" }, 7.550);
+  tl.set("#scene_2_features_inner", { opacity: 0 }, 8.000);
+
+  // --- Motion for Scene: scene_3_cta (8s - 12.00s) ---
+  tl.fromTo("#scene_3_cta_text", { opacity: 0, scale: 0.88 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.2)" }, 8.000);
+  tl.fromTo("#scene_3_cta_visual", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.2)" }, 8.100);
+  tl.to("#scene_3_cta_inner", { scale: 1.015, duration: 1.425, yoyo: true, repeat: 1, ease: "sine.inOut" }, 8.700);
+
+window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

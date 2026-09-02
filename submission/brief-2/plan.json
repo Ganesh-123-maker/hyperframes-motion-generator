@@ -1,0 +1,101 @@
+{
+  "title": "Velvet Bean Roasters - Grand Opening Announcement",
+  "duration": 8,
+  "fps": 30,
+  "aspectRatio": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "theme": {
+    "name": "warm-artisanal-coffee",
+    "backgroundType": "gradient",
+    "backgroundColor": "#FAF5F0",
+    "gradientEnd": "#EFE6DD",
+    "primaryColor": "#6F4E37",
+    "accentColor": "#C48A58",
+    "textColor": "#2B1810",
+    "surfaceColor": "#FFFFFF",
+    "fontFamily": "serif"
+  },
+  "scenes": [
+    {
+      "id": "scene_1_intro",
+      "start": 0,
+      "duration": 3,
+      "purpose": "intro",
+      "text": {
+        "badge": "GRAND OPENING",
+        "heading": "Velvet Bean Roasters",
+        "subtitle": "Small-batch specialty coffee crafted with passion"
+      },
+      "visual": {
+        "type": "generated_image",
+        "imagePrompt": "Cinematic warm aesthetic close-up of dark roasted coffee beans falling into a vintage copper artisanal roasting drum with soft morning sunlight.",
+        "layout": "centered"
+      },
+      "motion": {
+        "entrance": "fade_up",
+        "exit": "fade_out",
+        "ambient": "subtle_pulse",
+        "transition": "fade"
+      }
+    },
+    {
+      "id": "scene_2_details",
+      "start": 3,
+      "duration": 2.5,
+      "purpose": "feature_callout",
+      "text": {
+        "badge": "SAVE THE DATE",
+        "heading": "Opening October 12th",
+        "subtitle": "450 S. Santa Fe Ave · Downtown Arts District",
+        "callouts": [
+          "Single-Origin Pour Overs",
+          "Artisan House Pastries",
+          "Complimentary Tasting Flights"
+        ]
+      },
+      "visual": {
+        "type": "feature_grid",
+        "layout": "stacked_top"
+      },
+      "motion": {
+        "entrance": "slide_in_right",
+        "exit": "fade_out",
+        "ambient": "none",
+        "transition": "slide"
+      }
+    },
+    {
+      "id": "scene_3_cta",
+      "start": 5.5,
+      "duration": 2.5,
+      "purpose": "cta",
+      "text": {
+        "badge": "JOIN US",
+        "heading": "Experience Pure Craft",
+        "subtitle": "First 100 guests receive a complimentary signature roast"
+      },
+      "visual": {
+        "type": "cta_badge",
+        "layout": "centered"
+      },
+      "motion": {
+        "entrance": "scale_up",
+        "exit": "none",
+        "ambient": "subtle_pulse",
+        "transition": "fade"
+      }
+    }
+  ],
+  "cta": {
+    "actionText": "Visit Us This Saturday",
+    "subText": "Doors open at 7:00 AM",
+    "urlOrBrand": "velvetbean.coffee",
+    "badge": "DOORS OPEN AT 7 AM"
+  },
+  "metadata": {
+    "brief": "Create an 8 second vertical social video announcing the opening of a modern artisanal coffee shop named 'Velvet Bean Roasters'. Use a warm light visual style, minimal text, show the shop name, opening date 'October 12th' and location 'Downtown Arts District', include coffee roasting imagery, and finish with a warm 'Visit Us' call to action.",
+    "model": "gpt-5.5",
+    "version": "1.0.0"
+  }
+}

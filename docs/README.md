@@ -11,7 +11,9 @@ Welcome to the documentation for the **HyperFrames Motion Generator**. Below is 
 ---
 
 ## Evaluation & Results
+- **[Final Internship Audit](final-audit.md)**: Comprehensive evaluation against the 100-point grading rubric and traceability matrix.
 - **[Evaluation Results](evaluation-results.md)**: Observed results across the 3 required briefs (Widescreen Analytics, Vertical Coffee Shop, Text-Heavy Explainer), determinism test findings, mock repair tests, forced failure tests, and HyperFrames check outputs.
+- **[Determinism Analysis](determinism-results.md)**: Empirical test findings on repeatability and asset hash caching.
 - **[Video A Recording & Speaking Walkthrough](video-a-walkthrough.md)**: Developer speaking guide and screen-recording layout script for Video A presentation.
 - **[Video B Live Demo Guide](video-b-live-demo.md)**: Guide and protocol for live execution and screen recording.
 - **[Video B Live Demo Result](video-b-live-result.md)**: Empirical record of live demonstration execution, validation pass, and MP4 rendering.

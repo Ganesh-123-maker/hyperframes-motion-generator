@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-09-02T14:47:33.891Z",
+  "totalBriefs": 3,
+  "results": [
+    {
+      "briefId": "brief-1",
+      "title": "Pulse Analytics - Developer Platform Promo",
+      "aspectRatio": "16:9",
+      "dimensions": "1920x1080",
+      "duration": 12,
+      "sceneCount": 3,
+      "hyperframesCheck": {
+        "ok": true,
+        "exitCode": 0,
+        "issueCount": 0,
+        "durationMs": 24562
+      },
+      "status": "PASS"
+    },
+    {
+      "briefId": "brief-2",
+      "title": "Velvet Bean Roasters - Grand Opening Announcement",
+      "aspectRatio": "9:16",
+      "dimensions": "1080x1920",
+      "duration": 8,
+      "sceneCount": 3,
+      "hyperframesCheck": {
+        "ok": true,
+        "exitCode": 0,
+        "issueCount": 0,
+        "durationMs": 25626
+      },
+      "status": "PASS"
+    },
+    {
+      "briefId": "brief-3",
+      "title": "SyncWave - 5 Ways to Ship Faster",
+      "aspectRatio": "16:9",
+      "dimensions": "1920x1080",
+      "duration": 15,
+      "sceneCount": 3,
+      "hyperframesCheck": {
+        "ok": true,
+        "exitCode": 0,
+        "issueCount": 4,
+        "durationMs": 32086
+      },
+      "status": "PASS"
+    }
+  ]
+}

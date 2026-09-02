@@ -1,0 +1,400 @@
+{
+  "attempt": 1,
+  "timestamp": "2026-09-02T14:48:56.231Z",
+  "compositionPath": "D:\\Projects\\InfinAll_AI\\hyperframes-motion-generator\\submission\\brief-3\\composition\\composition",
+  "command": "npx hyperframes check D:\\Projects\\InfinAll_AI\\hyperframes-motion-generator\\submission\\brief-3\\composition\\composition --json",
+  "exitCode": 0,
+  "ok": true,
+  "hasFatalProcessError": false,
+  "summary": {
+    "lintErrors": 0,
+    "lintWarnings": 0,
+    "runtimeErrors": 0,
+    "runtimeWarnings": 0,
+    "layoutErrors": 0,
+    "layoutWarnings": 0,
+    "contrastErrors": 0,
+    "contrastWarnings": 4,
+    "motionErrors": 0,
+    "motionWarnings": 0,
+    "unknownErrors": 0,
+    "unknownWarnings": 0,
+    "totalErrors": 0,
+    "totalWarnings": 4,
+    "totalInfos": 0,
+    "totalIssues": 4
+  },
+  "issues": [
+    {
+      "id": "contrast:contrast_aa_failure:4.167:div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(1):0",
+      "category": "contrast",
+      "severity": "warning",
+      "code": "contrast_aa_failure",
+      "message": "Contrast is 1.09:1; WCAG AA requires 3:1.",
+      "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+      "sourceFile": "index.html",
+      "time": 4.167,
+      "raw": {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.09:1; WCAG AA requires 3:1.",
+        "text": "⚡",
+        "fg": "rgb(15,23,42)",
+        "bg": "rgb(13,13,13)",
+        "ratio": 1.09,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(89,95,108)",
+        "large": true,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1126,
+          "y": 509.5,
+          "width": 276,
+          "height": 32
+        },
+        "time": 4.167
+      },
+      "contrastDetails": {
+        "fg": "rgb(15,23,42)",
+        "bg": "rgb(13,13,13)",
+        "ratio": 1.09,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(89,95,108)",
+        "large": true,
+        "text": "⚡"
+      },
+      "layoutDetails": {
+        "bbox": {
+          "x": 1126,
+          "y": 509.5,
+          "width": 276,
+          "height": 32
+        },
+        "text": "⚡"
+      }
+    },
+    {
+      "id": "contrast:contrast_aa_failure:4.167:div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(2):1",
+      "category": "contrast",
+      "severity": "warning",
+      "code": "contrast_aa_failure",
+      "message": "Contrast is 1.09:1; WCAG AA requires 4.5:1.",
+      "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+      "sourceFile": "index.html",
+      "time": 4.167,
+      "raw": {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.09:1; WCAG AA requires 4.5:1.",
+        "text": "Instant Setup",
+        "fg": "rgb(15,23,42)",
+        "bg": "rgb(13,13,13)",
+        "ratio": 1.09,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(118,122,133)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1126,
+          "y": 549.5,
+          "width": 276,
+          "height": 21
+        },
+        "time": 4.167
+      },
+      "contrastDetails": {
+        "fg": "rgb(15,23,42)",
+        "bg": "rgb(13,13,13)",
+        "ratio": 1.09,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(118,122,133)",
+        "large": false,
+        "text": "Instant Setup"
+      },
+      "layoutDetails": {
+        "bbox": {
+          "x": 1126,
+          "y": 549.5,
+          "width": 276,
+          "height": 21
+        },
+        "text": "Instant Setup"
+      }
+    },
+    {
+      "id": "contrast:contrast_aa_failure:4.167:div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(1):2",
+      "category": "contrast",
+      "severity": "warning",
+      "code": "contrast_aa_failure",
+      "message": "Contrast is 1.09:1; WCAG AA requires 3:1.",
+      "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+      "sourceFile": "index.html",
+      "time": 4.167,
+      "raw": {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.09:1; WCAG AA requires 3:1.",
+        "text": "🛡️",
+        "fg": "rgb(15,23,42)",
+        "bg": "rgb(13,13,13)",
+        "ratio": 1.09,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(89,95,108)",
+        "large": true,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1456,
+          "y": 509.5,
+          "width": 276,
+          "height": 32
+        },
+        "time": 4.167
+      },
+      "contrastDetails": {
+        "fg": "rgb(15,23,42)",
+        "bg": "rgb(13,13,13)",
+        "ratio": 1.09,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(89,95,108)",
+        "large": true,
+        "text": "🛡️"
+      },
+      "layoutDetails": {
+        "bbox": {
+          "x": 1456,
+          "y": 509.5,
+          "width": 276,
+          "height": 32
+        },
+        "text": "🛡️"
+      }
+    },
+    {
+      "id": "contrast:contrast_aa_failure:4.167:div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2):3",
+      "category": "contrast",
+      "severity": "warning",
+      "code": "contrast_aa_failure",
+      "message": "Contrast is 1.09:1; WCAG AA requires 4.5:1.",
+      "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+      "sourceFile": "index.html",
+      "time": 4.167,
+      "raw": {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.09:1; WCAG AA requires 4.5:1.",
+        "text": "Zero Latency",
+        "fg": "rgb(15,23,42)",
+        "bg": "rgb(13,13,13)",
+        "ratio": 1.09,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(118,122,133)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 1456,
+          "y": 549.5,
+          "width": 276,
+          "height": 21
+        },
+        "time": 4.167
+      },
+      "contrastDetails": {
+        "fg": "rgb(15,23,42)",
+        "bg": "rgb(13,13,13)",
+        "ratio": 1.09,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(118,122,133)",
+        "large": false,
+        "text": "Zero Latency"
+      },
+      "layoutDetails": {
+        "bbox": {
+          "x": 1456,
+          "y": 549.5,
+          "width": 276,
+          "height": 21
+        },
+        "text": "Zero Latency"
+      }
+    }
+  ],
+  "parsedResult": {
+    "ok": true,
+    "strict": false,
+    "lint": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": [],
+      "filesScanned": 1
+    },
+    "runtime": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": []
+    },
+    "layout": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": [],
+      "duration": 15,
+      "samples": [
+        0.833,
+        2.5,
+        4.167,
+        5.833,
+        7.5,
+        9.167,
+        10.833,
+        12.5,
+        14.167
+      ],
+      "transitionSamples": [],
+      "transitionSamplesDropped": 0,
+      "tolerance": 2,
+      "totalIssueCount": 0,
+      "truncated": false
+    },
+    "motion": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": [],
+      "enabled": false,
+      "samples": 0
+    },
+    "contrast": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 4,
+      "infoCount": 0,
+      "findings": [
+        {
+          "code": "contrast_aa_failure",
+          "severity": "warning",
+          "message": "Contrast is 1.09:1; WCAG AA requires 3:1.",
+          "text": "⚡",
+          "fg": "rgb(15,23,42)",
+          "bg": "rgb(13,13,13)",
+          "ratio": 1.09,
+          "requiredRatio": 3,
+          "suggestedColor": "rgb(89,95,108)",
+          "large": true,
+          "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+          "dataAttributes": {},
+          "sourceFile": "index.html",
+          "bbox": {
+            "x": 1126,
+            "y": 509.5,
+            "width": 276,
+            "height": 32
+          },
+          "time": 4.167
+        },
+        {
+          "code": "contrast_aa_failure",
+          "severity": "warning",
+          "message": "Contrast is 1.09:1; WCAG AA requires 4.5:1.",
+          "text": "Instant Setup",
+          "fg": "rgb(15,23,42)",
+          "bg": "rgb(13,13,13)",
+          "ratio": 1.09,
+          "requiredRatio": 4.5,
+          "suggestedColor": "rgb(118,122,133)",
+          "large": false,
+          "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+          "dataAttributes": {},
+          "sourceFile": "index.html",
+          "bbox": {
+            "x": 1126,
+            "y": 549.5,
+            "width": 276,
+            "height": 21
+          },
+          "time": 4.167
+        },
+        {
+          "code": "contrast_aa_failure",
+          "severity": "warning",
+          "message": "Contrast is 1.09:1; WCAG AA requires 3:1.",
+          "text": "🛡️",
+          "fg": "rgb(15,23,42)",
+          "bg": "rgb(13,13,13)",
+          "ratio": 1.09,
+          "requiredRatio": 3,
+          "suggestedColor": "rgb(89,95,108)",
+          "large": true,
+          "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+          "dataAttributes": {},
+          "sourceFile": "index.html",
+          "bbox": {
+            "x": 1456,
+            "y": 509.5,
+            "width": 276,
+            "height": 32
+          },
+          "time": 4.167
+        },
+        {
+          "code": "contrast_aa_failure",
+          "severity": "warning",
+          "message": "Contrast is 1.09:1; WCAG AA requires 4.5:1.",
+          "text": "Zero Latency",
+          "fg": "rgb(15,23,42)",
+          "bg": "rgb(13,13,13)",
+          "ratio": 1.09,
+          "requiredRatio": 4.5,
+          "suggestedColor": "rgb(118,122,133)",
+          "large": false,
+          "selector": "div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+          "dataAttributes": {},
+          "sourceFile": "index.html",
+          "bbox": {
+            "x": 1456,
+            "y": 549.5,
+            "width": 276,
+            "height": 21
+          },
+          "time": 4.167
+        }
+      ],
+      "enabled": true,
+      "samples": [
+        0.833,
+        4.167,
+        7.5,
+        10.833,
+        14.167
+      ],
+      "checked": 58,
+      "passed": 54
+    },
+    "snapshots": {
+      "enabled": false,
+      "files": [],
+      "times": [],
+      "findingFiles": []
+    },
+    "_meta": {
+      "version": "0.8.25",
+      "latestVersion": "0.8.25",
+      "updateAvailable": false
+    }
+  },
+  "rawOutput": "{\n  \"ok\": true,\n  \"strict\": false,\n  \"lint\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": [],\n    \"filesScanned\": 1\n  },\n  \"runtime\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": []\n  },\n  \"layout\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": [],\n    \"duration\": 15,\n    \"samples\": [\n      0.833,\n      2.5,\n      4.167,\n      5.833,\n      7.5,\n      9.167,\n      10.833,\n      12.5,\n      14.167\n    ],\n    \"transitionSamples\": [],\n    \"transitionSamplesDropped\": 0,\n    \"tolerance\": 2,\n    \"totalIssueCount\": 0,\n    \"truncated\": false\n  },\n  \"motion\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": [],\n    \"enabled\": false,\n    \"samples\": 0\n  },\n  \"contrast\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 4,\n    \"infoCount\": 0,\n    \"findings\": [\n      {\n        \"code\": \"contrast_aa_failure\",\n        \"severity\": \"warning\",\n        \"message\": \"Contrast is 1.09:1; WCAG AA requires 3:1.\",\n        \"text\": \"⚡\",\n        \"fg\": \"rgb(15,23,42)\",\n        \"bg\": \"rgb(13,13,13)\",\n        \"ratio\": 1.09,\n        \"requiredRatio\": 3,\n        \"suggestedColor\": \"rgb(89,95,108)\",\n        \"large\": true,\n        \"selector\": \"div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(1)\",\n        \"dataAttributes\": {},\n        \"sourceFile\": \"index.html\",\n        \"bbox\": {\n          \"x\": 1126,\n          \"y\": 509.5,\n          \"width\": 276,\n          \"height\": 32\n        },\n        \"time\": 4.167\n      },\n      {\n        \"code\": \"contrast_aa_failure\",\n        \"severity\": \"warning\",\n        \"message\": \"Contrast is 1.09:1; WCAG AA requires 4.5:1.\",\n        \"text\": \"Instant Setup\",\n        \"fg\": \"rgb(15,23,42)\",\n        \"bg\": \"rgb(13,13,13)\",\n        \"ratio\": 1.09,\n        \"requiredRatio\": 4.5,\n        \"suggestedColor\": \"rgb(118,122,133)\",\n        \"large\": false,\n        \"selector\": \"div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(2)\",\n        \"dataAttributes\": {},\n        \"sourceFile\": \"index.html\",\n        \"bbox\": {\n          \"x\": 1126,\n          \"y\": 549.5,\n          \"width\": 276,\n          \"height\": 21\n        },\n        \"time\": 4.167\n      },\n      {\n        \"code\": \"contrast_aa_failure\",\n        \"severity\": \"warning\",\n        \"message\": \"Contrast is 1.09:1; WCAG AA requires 3:1.\",\n        \"text\": \"🛡️\",\n        \"fg\": \"rgb(15,23,42)\",\n        \"bg\": \"rgb(13,13,13)\",\n        \"ratio\": 1.09,\n        \"requiredRatio\": 3,\n        \"suggestedColor\": \"rgb(89,95,108)\",\n        \"large\": true,\n        \"selector\": \"div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(1)\",\n        \"dataAttributes\": {},\n        \"sourceFile\": \"index.html\",\n        \"bbox\": {\n          \"x\": 1456,\n          \"y\": 509.5,\n          \"width\": 276,\n          \"height\": 32\n        },\n        \"time\": 4.167\n      },\n      {\n        \"code\": \"contrast_aa_failure\",\n        \"severity\": \"warning\",\n        \"message\": \"Contrast is 1.09:1; WCAG AA requires 4.5:1.\",\n        \"text\": \"Zero Latency\",\n        \"fg\": \"rgb(15,23,42)\",\n        \"bg\": \"rgb(13,13,13)\",\n        \"ratio\": 1.09,\n        \"requiredRatio\": 4.5,\n        \"suggestedColor\": \"rgb(118,122,133)\",\n        \"large\": false,\n        \"selector\": \"div > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div:nth-of-type(2) > div:nth-of-type(2)\",\n        \"dataAttributes\": {},\n        \"sourceFile\": \"index.html\",\n        \"bbox\": {\n          \"x\": 1456,\n          \"y\": 549.5,\n          \"width\": 276,\n          \"height\": 21\n        },\n        \"time\": 4.167\n      }\n    ],\n    \"enabled\": true,\n    \"samples\": [\n      0.833,\n      4.167,\n      7.5,\n      10.833,\n      14.167\n    ],\n    \"checked\": 58,\n    \"passed\": 54\n  },\n  \"snapshots\": {\n    \"enabled\": false,\n    \"files\": [],\n    \"times\": [],\n    \"findingFiles\": []\n  },\n  \"_meta\": {\n    \"version\": \"0.8.25\",\n    \"latestVersion\": \"0.8.25\",\n    \"updateAvailable\": false\n  }\n}\n",
+  "stderr": "[INFO] [Compiler] Fetched 11 font face(s) for \"Inter\" from Google Fonts (cached to C:\\Users\\Barmavath\\.cache\\hyperframes\\fonts\\inter)\n[INFO] [Compiler] Injected deterministic @font-face rules for 1 requested font families\n[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor=\"Google Inc. (Intel)\" renderer=\"ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A1) Direct3D11 vs_5_0 ps_5_0, D3D11)\")\n"
+}

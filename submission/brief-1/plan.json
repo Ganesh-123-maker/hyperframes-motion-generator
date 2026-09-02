@@ -1,0 +1,101 @@
+{
+  "title": "Pulse Analytics - Developer Platform Promo",
+  "duration": 12,
+  "fps": 30,
+  "aspectRatio": "16:9",
+  "width": 1920,
+  "height": 1080,
+  "theme": {
+    "name": "dark-purple-cyber",
+    "backgroundType": "gradient",
+    "backgroundColor": "#0B0F19",
+    "gradientEnd": "#1E1035",
+    "primaryColor": "#A855F7",
+    "accentColor": "#C084FC",
+    "textColor": "#F8FAFC",
+    "surfaceColor": "#151D2E",
+    "fontFamily": "sans"
+  },
+  "scenes": [
+    {
+      "id": "scene_1_intro",
+      "start": 0,
+      "duration": 3.5,
+      "purpose": "intro",
+      "text": {
+        "badge": "NEXT-GEN PLATFORM",
+        "heading": "Pulse Analytics",
+        "subtitle": "Real-Time Observability for Modern Engineering Teams"
+      },
+      "visual": {
+        "type": "typography_only",
+        "layout": "centered"
+      },
+      "motion": {
+        "entrance": "fade_up",
+        "exit": "fade_out",
+        "ambient": "subtle_pulse",
+        "transition": "fade"
+      }
+    },
+    {
+      "id": "scene_2_features",
+      "start": 3.5,
+      "duration": 4.5,
+      "purpose": "feature_callout",
+      "text": {
+        "badge": "POWERFUL INSIGHTS",
+        "heading": "Full-Stack Velocity & Visibility",
+        "subtitle": "Identify regressions before they reach your customers",
+        "callouts": [
+          "Instant Query Tracing",
+          "CI/CD Bottleneck Detection",
+          "P99 Latency Heatmaps"
+        ]
+      },
+      "visual": {
+        "type": "generated_image",
+        "imagePrompt": "Sleek futuristic developer analytics dark mode UI dashboard showing glowing purple and cyan telemetry graphs, performance metrics, and code flow diagrams on ultra-clean matte surface.",
+        "layout": "split_right"
+      },
+      "motion": {
+        "entrance": "stagger_reveal",
+        "exit": "fade_out",
+        "ambient": "glow_shift",
+        "transition": "fade"
+      }
+    },
+    {
+      "id": "scene_3_cta",
+      "start": 8,
+      "duration": 4,
+      "purpose": "cta",
+      "text": {
+        "badge": "GET STARTED",
+        "heading": "Ship Faster, Debug Smarter",
+        "subtitle": "Join 10,000+ engineers streamlining their production pipelines"
+      },
+      "visual": {
+        "type": "cta_badge",
+        "layout": "centered"
+      },
+      "motion": {
+        "entrance": "scale_up",
+        "exit": "none",
+        "ambient": "subtle_pulse",
+        "transition": "fade"
+      }
+    }
+  ],
+  "cta": {
+    "actionText": "Start Free Today",
+    "subText": "No credit card required · Open source friendly",
+    "urlOrBrand": "pulseanalytics.dev",
+    "badge": "14-DAY PRO TRIAL"
+  },
+  "metadata": {
+    "brief": "Create a 12 second widescreen advertisement for a developer analytics platform. Use a dark theme with a purple accent, introduce the product, show three feature callouts, include subtle developer dashboard imagery, and finish with a strong call to action.",
+    "model": "gpt-5.5",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "attempt": 1,
+  "timestamp": "2026-09-02T14:47:58.480Z",
+  "compositionPath": "D:\\Projects\\InfinAll_AI\\hyperframes-motion-generator\\submission\\brief-1\\composition\\composition",
+  "command": "npx hyperframes check D:\\Projects\\InfinAll_AI\\hyperframes-motion-generator\\submission\\brief-1\\composition\\composition --json",
+  "exitCode": 0,
+  "ok": true,
+  "hasFatalProcessError": false,
+  "summary": {
+    "lintErrors": 0,
+    "lintWarnings": 0,
+    "runtimeErrors": 0,
+    "runtimeWarnings": 0,
+    "layoutErrors": 0,
+    "layoutWarnings": 0,
+    "contrastErrors": 0,
+    "contrastWarnings": 0,
+    "motionErrors": 0,
+    "motionWarnings": 0,
+    "unknownErrors": 0,
+    "unknownWarnings": 0,
+    "totalErrors": 0,
+    "totalWarnings": 0,
+    "totalInfos": 0,
+    "totalIssues": 0
+  },
+  "issues": [],
+  "parsedResult": {
+    "ok": true,
+    "strict": false,
+    "lint": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": [],
+      "filesScanned": 1
+    },
+    "runtime": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": []
+    },
+    "layout": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": [],
+      "duration": 12,
+      "samples": [
+        0.667,
+        2,
+        3.333,
+        4.667,
+        6,
+        7.333,
+        8.667,
+        10,
+        11.333
+      ],
+      "transitionSamples": [],
+      "transitionSamplesDropped": 0,
+      "tolerance": 2,
+      "totalIssueCount": 0,
+      "truncated": false
+    },
+    "motion": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": [],
+      "enabled": false,
+      "samples": 0
+    },
+    "contrast": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "findings": [],
+      "enabled": true,
+      "samples": [
+        0.667,
+        3.333,
+        6,
+        8.667,
+        11.333
+      ],
+      "checked": 35,
+      "passed": 35
+    },
+    "snapshots": {
+      "enabled": false,
+      "files": [],
+      "times": [],
+      "findingFiles": []
+    },
+    "_meta": {
+      "version": "0.8.25",
+      "latestVersion": "0.8.25",
+      "updateAvailable": false
+    }
+  },
+  "rawOutput": "{\n  \"ok\": true,\n  \"strict\": false,\n  \"lint\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": [],\n    \"filesScanned\": 1\n  },\n  \"runtime\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": []\n  },\n  \"layout\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": [],\n    \"duration\": 12,\n    \"samples\": [\n      0.667,\n      2,\n      3.333,\n      4.667,\n      6,\n      7.333,\n      8.667,\n      10,\n      11.333\n    ],\n    \"transitionSamples\": [],\n    \"transitionSamplesDropped\": 0,\n    \"tolerance\": 2,\n    \"totalIssueCount\": 0,\n    \"truncated\": false\n  },\n  \"motion\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": [],\n    \"enabled\": false,\n    \"samples\": 0\n  },\n  \"contrast\": {\n    \"ok\": true,\n    \"errorCount\": 0,\n    \"warningCount\": 0,\n    \"infoCount\": 0,\n    \"findings\": [],\n    \"enabled\": true,\n    \"samples\": [\n      0.667,\n      3.333,\n      6,\n      8.667,\n      11.333\n    ],\n    \"checked\": 35,\n    \"passed\": 35\n  },\n  \"snapshots\": {\n    \"enabled\": false,\n    \"files\": [],\n    \"times\": [],\n    \"findingFiles\": []\n  },\n  \"_meta\": {\n    \"version\": \"0.8.25\",\n    \"latestVersion\": \"0.8.25\",\n    \"updateAvailable\": false\n  }\n}\n",
+  "stderr": "[INFO] [Compiler] Fetched 11 font face(s) for \"Inter\" from Google Fonts (cached to C:\\Users\\Barmavath\\.cache\\hyperframes\\fonts\\inter)\n[INFO] [Compiler] Injected deterministic @font-face rules for 1 requested font families\n[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor=\"Google Inc. (Intel)\" renderer=\"ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A1) Direct3D11 vs_5_0 ps_5_0, D3D11)\")\n"
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="600" viewBox="0 0 920 600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#6F4E3733"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6F4E3744"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="920" height="600" rx="16" fill="url(#bgGrad)" stroke="#6F4E3755" stroke-width="2"/>
+  <circle cx="460" cy="300" r="200" fill="url(#glow)" />
+  
+  <!-- Central Icon Symbol -->
+  <g transform="translate(428, 252)" stroke="#6F4E37" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="56" height="56" rx="8" />
+    <circle cx="24" cy="24" r="6" />
+    <path d="M56 44 L40 28 L12 56" />
+  </g>
+  
+  <text x="460" y="336" fill="#FFFFFF" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle">Velvet Bean Roasters</text>
+  <text x="460" y="364" fill="#94A3B8" font-family="sans-serif" font-size="14" text-anchor="middle">Cinematic warm aesthetic close-up of dark roasted coffee beans falling into a vintage copper artisan</text>
+</svg>
