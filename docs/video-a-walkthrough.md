@@ -154,7 +154,7 @@ To record Video A efficiently, open these files in your IDE tabs in advance and 
 | **6** | GPT-5.5 Planner & Validator | [`src/planner/planner.ts`](../src/planner/planner.ts) & [`validator.ts`](../src/planner/validator.ts) | Structured JSON plan generation & Zod schema validation |
 | **7** | Deterministic Generator | [`src/composition/generator.ts`](../src/composition/generator.ts) | Pure TypeScript HTML/GSAP compiler |
 | **8** | HyperFrames Checker | [`src/checker/hyperframesChecker.ts`](../src/checker/hyperframesChecker.ts) & [`classifier.ts`](../src/checker/classifier.ts) | Headless browser execution & issue classification |
-| **9** | Repair Engine | [`src/repair/orchestrator.ts`](../src/repair/orchestrator.ts) & [`drift.ts`](../src/repair/drift.ts) | Bounded repair loop, issue prompts, drift detection |
+| **9** | Repair Engine | [`src/repair/runner.ts`](../src/repair/runner.ts) & [`drift.ts`](../src/repair/drift.ts) | Bounded repair loop, issue prompts, drift detection |
 | **10**| MP4 Renderer | [`src/render/renderer.ts`](../src/render/renderer.ts) | `npx hyperframes render` invocation & `ffmpeg-static` fallback |
 | **11**| MP4 Verifier | [`src/render/renderer.ts`](../src/render/renderer.ts#L90-L130) | File stat checks (`size > 0`), metadata log saving |
 | **12**| Evaluation Results | [`docs/evaluation-results.md`](evaluation-results.md) | Summary table of 3 briefs, 100% check pass rate |
