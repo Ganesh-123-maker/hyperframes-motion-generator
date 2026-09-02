@@ -17,4 +17,5 @@ snapshots/
 .hf-tmp/
 *.mp4
 *.webm
+test-outputs*
 
