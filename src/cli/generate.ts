@@ -132,6 +132,24 @@ async function main() {
       console.log('✓ Initial plan generated and validated\n');
     } catch (err: any) {
       console.error('[ERROR] Initial planning failed:', err.message);
+      const runDir = path.join(outputDir, runId);
+      if (!fs.existsSync(runDir)) fs.mkdirSync(runDir, { recursive: true });
+      fs.writeFileSync(
+        path.join(runDir, 'failure.json'),
+        JSON.stringify(
+          {
+            stage: 'planning',
+            reason: 'Initial planning generation failed',
+            attempt: 0,
+            artifacts: [],
+            error: err.message,
+            timestamp: new Date().toISOString()
+          },
+          null,
+          2
+        ),
+        'utf-8'
+      );
       process.exit(1);
     }
   }
@@ -150,6 +168,8 @@ async function main() {
     dryRun: isDryRun
   });
 
+  const runDir = path.join(outputDir, runId);
+
   if (!loopResult.ok || !loopResult.finalCompositionDir) {
     console.error('\n===============================================================');
     console.error(' [FATAL FAILURE] Quality Gate / Repair Loop Failed');
@@ -163,11 +183,28 @@ async function main() {
       }
     }
     console.error(`\nAll attempt artifacts saved at: ${path.join(outputDir, runId, 'attempts')}`);
+
+    fs.writeFileSync(
+      path.join(runDir, 'failure.json'),
+      JSON.stringify(
+        {
+          stage: 'validation_repair',
+          reason: loopResult.errorMessage,
+          attempt: loopResult.attempts,
+          artifacts: [path.join(outputDir, runId, 'attempts')],
+          unresolvedIssues: loopResult.lastCheckResult?.issues || [],
+          timestamp: new Date().toISOString()
+        },
+        null,
+        2
+      ),
+      'utf-8'
+    );
+
     process.exit(1);
   }
 
   // 3. Final MP4 Render Stage
-  const runDir = path.join(outputDir, runId);
   const renderDir = path.join(runDir, 'render');
   let renderResult;
 
@@ -182,6 +219,24 @@ async function main() {
     if (!renderResult.ok || !renderResult.mp4Path) {
       console.error('\n[FATAL ERROR] Video rendering failed.');
       console.error(renderResult.errorMessage || renderResult.stderr);
+
+      fs.writeFileSync(
+        path.join(runDir, 'failure.json'),
+        JSON.stringify(
+          {
+            stage: 'rendering',
+            reason: renderResult.errorMessage || 'Rendering failed',
+            attempt: loopResult.attempts,
+            artifacts: [renderDir],
+            error: renderResult.stderr || renderResult.errorMessage,
+            timestamp: new Date().toISOString()
+          },
+          null,
+          2
+        ),
+        'utf-8'
+      );
+
       process.exit(1);
     }
 

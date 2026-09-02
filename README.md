@@ -132,6 +132,9 @@ npm run generate -- --brief "Create a 12 second widescreen ad for developer anal
 # Generate vertical video for social media
 npm run generate -- --brief "Create an 8 second vertical social video announcing a modern coffee shop opening"
 
+# Generate vertical launch announcement
+npm run generate -- --brief "Create a 10 second vertical launch announcement for a productivity app with three animated benefits and a final call to action."
+
 # Generate video from pre-saved brief file
 npm run generate -- --file examples/briefs/brief-1.txt
 
