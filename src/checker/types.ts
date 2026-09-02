@@ -27,6 +27,7 @@ export interface NormalizedIssue {
   sourceFile?: string;
   time?: number;
   fixHint?: string;
+  details?: string;
   contrastDetails?: {
     fg?: string;
     bg?: string;

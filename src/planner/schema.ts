@@ -141,11 +141,16 @@ export const VideoPlanSchema = z.object({
   theme: ThemeSchema,
   scenes: z.array(SceneSchema).min(1, 'Plan must contain at least one scene'),
   cta: CtaSchema.optional(),
-  metadata: z.object({
-    brief: z.string().optional(),
-    model: z.string().optional(),
-    generatedAt: z.string().optional(),
-    version: z.string().default('1.0.0')
-  }).optional()
+  metadata: z
+    .object({
+      brief: z.string().optional(),
+      model: z.string().optional(),
+      generatedAt: z.string().optional(),
+      repairedAt: z.string().optional(),
+      repairModel: z.string().optional(),
+      version: z.string().default('1.0.0')
+    })
+    .passthrough()
+    .optional()
 });
 export type VideoPlan = z.infer<typeof VideoPlanSchema>;

@@ -2,35 +2,35 @@
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
-import { generatePlanFromBrief } from '../planner';
-import { validateFullPlan } from '../planner/validator';
-import { generateImageAssets } from '../image/generator';
-import { generateComposition } from '../composition/generator';
-import { checkComposition, formatCheckReport, isCompositionValid } from '../checker';
+import { generatePlanFromBrief } from '../planner/index.js';
+import { validateFullPlan } from '../planner/validator.js';
+import { runSelfVerificationLoop } from '../repair/index.js';
+import { renderComposition } from '../render/index.js';
 
 dotenv.config();
 
 function printUsage() {
   console.log(`
-HyperFrames End-to-End Pipeline CLI (Phases 1-4)
------------------------------------------------
+HyperFrames End-to-End Motion Graphics Pipeline CLI (Phases 1-6)
+----------------------------------------------------------------
 Usage:
   npm run generate -- --brief "<brief text>" [options]
   npm run generate -- --file <path-to-brief.txt> [options]
   npm run generate -- --example
 
 Options:
-  --brief <text>     Plain-language video brief
-  --file <path>      Path to text file containing brief
-  --example          Use the standard developer platform brief
-  --out <dir>        Target output directory (default: ./outputs)
-  --plan-model <m>   Planning LLM model (default: gpt-5.5)
-  --image-model <m>  Image model (default: gpt-image-2)
-  --force-images     Force regenerate images (bypass cache)
-  --skip-check       Skip HyperFrames verification gate (not recommended)
-  --strict           Treat verification warnings as fatal errors
-  --dry-run          Use verified reference plan without calling LLM
-  --help             Show this help message
+  --brief <text>        Plain-language video brief
+  --file <path>         Path to text file containing brief
+  --example             Use the standard developer platform brief
+  --out <dir>           Target output directory (default: ./outputs)
+  --plan-model <m>      Planning/Repair LLM model (default: gpt-5.5)
+  --image-model <m>     Image model (default: gpt-image-2)
+  --force-images        Force regenerate images (bypass cache)
+  --max-repair <n>      Maximum repair attempts (default: 3)
+  --skip-render         Skip final MP4 rendering stage
+  --strict              Treat verification warnings as fatal errors
+  --dry-run             Use verified reference plan without calling LLM
+  --help                Show this help message
 `);
 }
 
@@ -49,8 +49,9 @@ async function main() {
   let isExample = args.includes('--example');
   let isDryRun = args.includes('--dry-run');
   let forceImages = args.includes('--force-images');
-  let skipCheck = args.includes('--skip-check');
+  let skipRender = args.includes('--skip-render');
   let isStrict = args.includes('--strict');
+  let maxRepairAttempts = 3;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--brief' && args[i + 1]) {
@@ -73,6 +74,9 @@ async function main() {
     } else if (args[i] === '--image-model' && args[i + 1]) {
       imageModel = args[i + 1];
       i++;
+    } else if (args[i] === '--max-repair' && args[i + 1]) {
+      maxRepairAttempts = parseInt(args[i + 1], 10) || 3;
+      i++;
     }
   }
 
@@ -93,15 +97,15 @@ async function main() {
   }
 
   console.log('===============================================================');
-  console.log(' HyperFrames End-to-End Pipeline (Plan → Images → Composition)');
+  console.log(' HyperFrames End-to-End Generator (Plan → Repair → Render)');
   console.log('===============================================================\n');
 
   console.log(`[Input Brief]: "${brief.trim()}"\n`);
 
-  let plan;
-  let runId: string;
+  let initialPlan;
+  let runId = `run_${Date.now()}`;
 
-  // 1. Planning Stage
+  // 1. Initial Planning Stage
   if (isDryRun || (!process.env.OPENAI_API_KEY && !isDryRun)) {
     if (!process.env.OPENAI_API_KEY) {
       console.warn('[Notice] OPENAI_API_KEY not found. Using validated reference plan for dry run.\n');
@@ -115,102 +119,89 @@ async function main() {
       console.error('Validation failed on example plan:', val.errors);
       process.exit(1);
     }
-    plan = val.plan;
-    runId = `run_${Date.now()}`;
+    initialPlan = val.plan;
   } else {
-    console.log(`[Stage 1/3] Generating structured plan with ${planModel}...`);
+    console.log(`[Stage 1/3] Generating initial structured plan with ${planModel}...`);
     try {
       const planResult = await generatePlanFromBrief(brief, {
         model: planModel,
         outputDir
       });
-      plan = planResult.plan;
+      initialPlan = planResult.plan;
       runId = path.basename(planResult.outputDirectory);
-      console.log('✓ Plan generated and validated\n');
+      console.log('✓ Initial plan generated and validated\n');
     } catch (err: any) {
-      console.error('[ERROR] Planning failed:', err.message);
+      console.error('[ERROR] Initial planning failed:', err.message);
       process.exit(1);
     }
   }
 
-  // 2. Image Asset Generation Stage
-  console.log(`[Stage 2/3] Processing visual asset requirements...`);
-  let manifest;
-  let openaiClient;
+  // 2. Self-Verification and Repair Loop Stage
+  console.log(`[Stage 2/3] Running Self-Verification & Automated Repair Loop...\n`);
 
-  if (isDryRun || (!process.env.OPENAI_API_KEY && !openaiClient)) {
-    console.log('[Dry Run Mode] Using mocked image client with sample asset fixture.\n');
-    const sampleB64 =
-      'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
-    openaiClient = {
-      images: {
-        generate: async () => ({ data: [{ b64_json: sampleB64 }] })
+  const loopResult = await runSelfVerificationLoop(brief, initialPlan, {
+    outputDir,
+    runId,
+    maxRepairAttempts,
+    planModel,
+    imageModel,
+    forceImages,
+    strict: isStrict,
+    dryRun: isDryRun
+  });
+
+  if (!loopResult.ok || !loopResult.finalCompositionDir) {
+    console.error('\n===============================================================');
+    console.error(' [FATAL FAILURE] Quality Gate / Repair Loop Failed');
+    console.error('===============================================================');
+    console.error(`Error: ${loopResult.errorMessage}`);
+    console.error(`Total Attempts Executed: ${loopResult.attempts}`);
+    if (loopResult.lastCheckResult?.issues) {
+      console.error('\nRemaining Unresolved Issues:');
+      for (const issue of loopResult.lastCheckResult.issues) {
+        console.error(`  - [${issue.category.toUpperCase()}] ${issue.message}`);
       }
-    } as any;
-  }
-
-  try {
-    manifest = await generateImageAssets(plan, {
-      outputDir,
-      runId,
-      model: imageModel,
-      forceRegenerate: forceImages,
-      openaiClient
-    });
-    console.log(`✓ Assets resolved (${manifest.totalAssets} asset${manifest.totalAssets === 1 ? '' : 's'})\n`);
-  } catch (err: any) {
-    console.error('[ERROR] Image asset generation failed:', err.message);
+    }
+    console.error(`\nAll attempt artifacts saved at: ${path.join(outputDir, runId, 'attempts')}`);
     process.exit(1);
   }
 
-  // 3. Composition Generation Stage
-  console.log(`[Stage 3/4] Generating deterministic HyperFrames composition...`);
-  let compResult;
-  try {
-    compResult = await generateComposition(plan, {
-      outputDir,
-      runId,
-      assetManifest: manifest,
-      createPlaceholderAssets: true
-    });
+  // 3. Final MP4 Render Stage
+  const runDir = path.join(outputDir, runId);
+  const renderDir = path.join(runDir, 'render');
+  let renderResult;
 
-    console.log('✓ Composition generated successfully\n');
-  } catch (err: any) {
-    console.error('[ERROR] Composition generation failed:', err.message);
-    process.exit(1);
-  }
-
-  // 4. HyperFrames Verification Stage
-  if (skipCheck) {
-    console.warn('[Notice] Skipping HyperFrames quality verification gate (--skip-check).\n');
+  if (skipRender) {
+    console.warn('\n[Notice] Skipping MP4 render stage (--skip-render).\n');
   } else {
-    console.log(`[Stage 4/4] Executing HyperFrames Quality Verification Gate...`);
-    const checkResult = await checkComposition(compResult.compositionDir, {
-      strict: isStrict,
-      saveArtifact: true
+    console.log(`\n[Stage 3/3] Rendering verified composition to MP4 video...`);
+    renderResult = await renderComposition(loopResult.finalCompositionDir, {
+      outputDir: renderDir
     });
 
-    console.log(formatCheckReport(checkResult));
-
-    if (!isCompositionValid(checkResult)) {
-      console.error('\n[FATAL] Composition failed HyperFrames quality gate.');
-      console.error('Validation errors must be resolved before video can be rendered or considered valid.');
+    if (!renderResult.ok || !renderResult.mp4Path) {
+      console.error('\n[FATAL ERROR] Video rendering failed.');
+      console.error(renderResult.errorMessage || renderResult.stderr);
       process.exit(1);
     }
-    console.log('✓ Quality verification gate passed!\n');
+
+    console.log(`✓ MP4 render complete: ${renderResult.mp4Path}`);
   }
 
-  console.log('================ Pipeline Summary ================');
+  console.log('\n================ Pipeline Final Summary ================');
+  console.log(`Status:            SUCCESS`);
   console.log(`Run ID:            ${runId}`);
-  console.log(`Output Directory:  ${compResult.compositionDir}`);
-  console.log(`Index HTML:        ${compResult.indexHtmlPath}`);
-  console.log(`HyperFrames JSON:  ${compResult.configPath}`);
-  console.log(`Total Scenes:      ${compResult.sceneCount}`);
-  console.log(`Duration:          ${compResult.duration}s`);
-  console.log(`Resolution:        ${compResult.resolution.width}x${compResult.resolution.height} (${compResult.resolution.aspectRatio})`);
-  console.log(`Processed Assets:  ${manifest.totalAssets}`);
-  console.log(`Verification:      PASSED (0 fatal errors)`);
-  console.log('==================================================\n');
+  console.log(`Attempts Executed: ${loopResult.attempts}`);
+  console.log(`Plan JSON:         ${path.join(runDir, 'plan.json')}`);
+  console.log(`Composition:       ${loopResult.finalCompositionDir}`);
+  console.log(`Repair History:    ${path.join(runDir, 'repair-history.json')}`);
+  if (renderResult?.mp4Path) {
+    console.log(`Rendered MP4:      ${renderResult.mp4Path}`);
+    console.log(`File Size:         ${(renderResult.fileSizeBytes! / (1024 * 1024)).toFixed(2)} MB`);
+  }
+  console.log(`Duration:          ${loopResult.finalPlan.duration}s`);
+  console.log(`Resolution:        ${loopResult.finalPlan.width}x${loopResult.finalPlan.height} (${loopResult.finalPlan.aspectRatio})`);
+  console.log('========================================================\n');
 }
 
 main();

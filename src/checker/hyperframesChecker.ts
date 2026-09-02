@@ -138,7 +138,13 @@ export function normalizeCheckOutput(rawJson: HyperFramesRawCheckOutput): Normal
   const issues: NormalizedIssue[] = [];
   let index = 0;
 
-  const stages: (keyof HyperFramesRawCheckOutput)[] = ['lint', 'runtime', 'layout', 'motion', 'contrast'];
+  const stages: ('lint' | 'runtime' | 'layout' | 'motion' | 'contrast')[] = [
+    'lint',
+    'runtime',
+    'layout',
+    'motion',
+    'contrast'
+  ];
 
   for (const stage of stages) {
     const stageData = rawJson[stage];
@@ -184,7 +190,7 @@ export async function checkComposition(
 ): Promise<HyperFramesCheckResult> {
   const startTime = Date.now();
   const absoluteDir = path.resolve(compositionDirectory);
-  const timeoutMs = options.timeoutMs ?? 60000;
+  const timeoutMs = options.timeoutMs ?? 120000;
 
   // Basic existence check
   if (!fs.existsSync(absoluteDir)) {
@@ -233,6 +239,7 @@ export async function checkComposition(
       args,
       {
         cwd: process.cwd(),
+        shell: true,
         timeout: timeoutMs,
         maxBuffer: 15 * 1024 * 1024, // 15 MB
         env: {
