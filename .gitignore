@@ -1,0 +1,20 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Pipeline generated outputs, assets, and caches
+outputs/
+renders/
+runs/
+temp/
+tmp/
+snapshots/
+.hf-tmp/
+*.mp4
+*.webm
+

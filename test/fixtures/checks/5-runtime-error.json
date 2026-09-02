@@ -1,0 +1,48 @@
+{
+  "ok": false,
+  "strict": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "runtime": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "uncaught_exception",
+        "severity": "error",
+        "message": "Uncaught TypeError: Cannot read properties of undefined (reading 'timeline')",
+        "sourceFile": "index.html",
+        "stack": "TypeError: Cannot read properties of undefined\n    at index.html:42:15",
+        "fixHint": "Verify that GSAP library is imported and initialized correctly."
+      }
+    ]
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  }
+}

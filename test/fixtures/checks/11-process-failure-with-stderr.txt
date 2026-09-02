@@ -1,0 +1,3 @@
+[CRITICAL] Chrome Headless Shell failed to launch: GPU process crashed with signal SIGSEGV.
+    at BrowserRunner.launch (/node_modules/hyperframes/dist/browser.js:88:12)
+    at verifyRuntime (/node_modules/hyperframes/dist/verify.js:142:9)

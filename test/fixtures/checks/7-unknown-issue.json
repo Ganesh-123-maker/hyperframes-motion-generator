@@ -1,0 +1,17 @@
+{
+  "ok": false,
+  "strict": false,
+  "customStage": {
+    "ok": false,
+    "errorCount": 1,
+    "findings": [
+      {
+        "code": "future_unrecognized_diagnostic_code",
+        "severity": "error",
+        "message": "A future HyperFrames diagnostic rule flagged this arbitrary node condition.",
+        "selector": ".novel-element",
+        "customPayload": { "foo": "bar" }
+      }
+    ]
+  }
+}

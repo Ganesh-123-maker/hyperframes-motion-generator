@@ -1,0 +1,6 @@
+{
+  "name": "HyperFrames Motion Graphics Video Generator",
+  "description": "Automated motion graphics video generator converting plain-language briefs into verified HyperFrames compositions with bounded repair loops and deterministic MP4 rendering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

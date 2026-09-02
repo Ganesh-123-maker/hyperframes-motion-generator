@@ -1,0 +1,95 @@
+{
+  "ok": false,
+  "strict": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 2,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "canvas_overflow",
+        "severity": "error",
+        "time": 2.5,
+        "selector": "#big-box",
+        "message": "Element exceeds composition canvas bounds by 82px.",
+        "rect": {
+          "left": 1889.97,
+          "top": 900,
+          "right": 2002.41,
+          "bottom": 917,
+          "width": 112.44,
+          "height": 17
+        },
+        "containerSelector": "#root",
+        "text": "Overflowing Box",
+        "fixHint": "Move element inward or scale content to fit within 1920x1080 canvas.",
+        "overflow": {
+          "right": 82.41
+        },
+        "bbox": {
+          "x": 1889.97,
+          "y": 900,
+          "width": 112.44,
+          "height": 17
+        }
+      },
+      {
+        "code": "layout_overlap",
+        "severity": "error",
+        "time": 3.0,
+        "selector": "#subtitle-text",
+        "message": "Element overlaps with #hero-image without explicit z-index layering.",
+        "bbox": {
+          "x": 200,
+          "y": 300,
+          "width": 400,
+          "height": 80
+        },
+        "fixHint": "Adjust layout coordinates or apply distinct layout slots."
+      }
+    ],
+    "duration": 5,
+    "samples": [0.278, 0.833, 1.389, 1.944, 2.5, 3.056, 3.611, 4.167, 4.722],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 2,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [0.278, 1.389, 2.5, 3.611, 4.722],
+    "checked": 10,
+    "passed": 10
+  }
+}

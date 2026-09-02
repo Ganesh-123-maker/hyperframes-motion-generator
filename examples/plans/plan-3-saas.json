@@ -1,0 +1,101 @@
+{
+  "title": "SyncWave - 5 Ways to Ship Faster",
+  "duration": 15,
+  "fps": 30,
+  "aspectRatio": "16:9",
+  "width": 1920,
+  "height": 1080,
+  "theme": {
+    "name": "clean-light-saas",
+    "backgroundType": "solid",
+    "backgroundColor": "#F8FAFC",
+    "gradientEnd": "#EEF2F6",
+    "primaryColor": "#2563EB",
+    "accentColor": "#3B82F6",
+    "textColor": "#0F172A",
+    "surfaceColor": "#FFFFFF",
+    "fontFamily": "sans"
+  },
+  "scenes": [
+    {
+      "id": "scene_1_intro",
+      "start": 0,
+      "duration": 3.0,
+      "purpose": "intro",
+      "text": {
+        "badge": "PROJECT MANAGEMENT REINVENTED",
+        "heading": "Stop Managing Tasks. Start Shipping.",
+        "subtitle": "SyncWave replaces fragmented trackers with one unified velocity workspace"
+      },
+      "visual": {
+        "type": "typography_only",
+        "layout": "centered"
+      },
+      "motion": {
+        "entrance": "fade_up",
+        "exit": "fade_out",
+        "ambient": "subtle_pulse",
+        "transition": "fade"
+      }
+    },
+    {
+      "id": "scene_2_benefits",
+      "start": 3.0,
+      "duration": 8.0,
+      "purpose": "feature_callout",
+      "text": {
+        "badge": "5 CORE ADVANTAGES",
+        "heading": "Engineered for High-Output Teams",
+        "subtitle": "Built for modern engineering, design, and product organizations",
+        "callouts": [
+          "1. Zero-Friction Async Updates",
+          "2. Real-Time Sprint Velocity Graphs",
+          "3. Automated GitHub & Linear Sync",
+          "4. AI-Driven Blocker Resolution"
+        ]
+      },
+      "visual": {
+        "type": "feature_grid",
+        "layout": "split_right"
+      },
+      "motion": {
+        "entrance": "stagger_reveal",
+        "exit": "fade_out",
+        "ambient": "glow_shift",
+        "transition": "fade"
+      }
+    },
+    {
+      "id": "scene_3_summary_cta",
+      "start": 11.0,
+      "duration": 4.0,
+      "purpose": "cta",
+      "text": {
+        "badge": "JOIN 5,000+ FAST TEAMS",
+        "heading": "Level Up Your Team's Velocity",
+        "subtitle": "Get started in 60 seconds with one-click workspace import"
+      },
+      "visual": {
+        "type": "cta_badge",
+        "layout": "centered"
+      },
+      "motion": {
+        "entrance": "scale_up",
+        "exit": "none",
+        "ambient": "subtle_pulse",
+        "transition": "fade"
+      }
+    }
+  ],
+  "cta": {
+    "actionText": "Start Free for 30 Days",
+    "subText": "Unlimited users · Full feature access",
+    "urlOrBrand": "syncwave.io",
+    "badge": "NO CREDIT CARD REQUIRED"
+  },
+  "metadata": {
+    "brief": "Create a 15 second product explainer for a project management application named 'SyncWave'. Show five benefits one after another using bold typography and progress indicators, then finish with a concise summary and call to action. Use a clean light theme.",
+    "model": "gpt-5.5",
+    "version": "1.0.0"
+  }
+}

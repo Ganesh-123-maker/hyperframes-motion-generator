@@ -1,0 +1,98 @@
+{
+  "ok": false,
+  "strict": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 5,
+    "samples": [0.278, 1.389, 2.5, 3.611, 4.722],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": false,
+    "errorCount": 2,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.12:1; WCAG AA requires 3:1.",
+        "text": "Barely visible white text on white",
+        "fg": "rgb(242,242,242)",
+        "bg": "rgb(255,255,255)",
+        "ratio": 1.12,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(148,148,148)",
+        "large": true,
+        "selector": "#title",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 677.7,
+          "height": 55
+        },
+        "time": 0.278
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.16:1; WCAG AA requires 3:1.",
+        "text": "Another low contrast subtitle",
+        "fg": "rgb(238,238,238)",
+        "bg": "rgb(255,255,255)",
+        "ratio": 1.16,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(148,148,148)",
+        "large": true,
+        "selector": "#sub",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 55,
+          "width": 677.7,
+          "height": 27
+        },
+        "time": 0.278
+      }
+    ],
+    "enabled": true,
+    "samples": [0.278, 1.389, 2.5, 3.611, 4.722],
+    "checked": 10,
+    "passed": 8
+  }
+}
