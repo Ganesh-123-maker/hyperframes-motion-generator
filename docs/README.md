@@ -12,6 +12,7 @@ Welcome to the documentation for the **HyperFrames Motion Generator**. Below is 
 
 ## Evaluation & Results
 - **[Evaluation Results](evaluation-results.md)**: Observed results across the 3 required briefs (Widescreen Analytics, Vertical Coffee Shop, Text-Heavy Explainer), determinism test findings, mock repair tests, forced failure tests, and HyperFrames check outputs.
+- **[Video A Recording & Speaking Walkthrough](video-a-walkthrough.md)**: Developer speaking guide and screen-recording layout script for Video A presentation.
 - **[Submission Checklist](submission-checklist.md)**: Final verification checklist for evaluation and grading.
 
 ---
