@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
+import '../config/env.js';
 import { validateFullPlan } from '../planner/validator';
 import { generateImageAssets } from '../image/generator';
-
-dotenv.config();
 
 function printUsage() {
   console.log(`
@@ -92,12 +90,8 @@ async function main() {
   const plan = validation.plan;
 
   let openaiClient;
-  if (isDryRun || (!process.env.OPENAI_API_KEY && !openaiClient)) {
-    if (!process.env.OPENAI_API_KEY) {
-      console.log('[Notice] OPENAI_API_KEY not configured. Running dry-run with mock asset fixture.\n');
-    } else {
-      console.log('[Dry Run Mode] Using mock asset fixture.\n');
-    }
+  if (isDryRun) {
+    console.log('[Dry Run Mode] Using mock asset fixture.\n');
     const sampleB64 =
       'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
     openaiClient = {
@@ -105,6 +99,11 @@ async function main() {
         generate: async () => ({ data: [{ b64_json: sampleB64 }] })
       }
     } as any;
+  } else if (!process.env.OPENAI_API_KEY) {
+    console.error('[FATAL] OPENAI_API_KEY is not set in environment.');
+    console.error('Create a .env file in the project root with: OPENAI_API_KEY=<your key>');
+    console.error('Or use --dry-run to use mock asset fixtures without an API key.');
+    process.exit(1);
   }
 
   try {

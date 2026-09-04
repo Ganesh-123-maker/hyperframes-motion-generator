@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
+import '../config/env.js';
 import { generatePlanFromBrief } from '../planner';
 import { validateFullPlan } from '../planner/validator';
-
-dotenv.config();
 
 function printUsage() {
   console.log(`
@@ -84,14 +82,16 @@ async function main() {
   console.log(`\n[1] Video Brief Input:`);
   console.log(`"${brief.trim()}"\n`);
 
-  if (isDryRun || (!process.env.OPENAI_API_KEY && !isDryRun)) {
-    if (!process.env.OPENAI_API_KEY) {
-      console.warn(
-        `[Notice] OPENAI_API_KEY is not set in environment.\nExecuting dry-run validation against verified reference plan artifact.`
-      );
-    } else {
-      console.log(`[Dry-Run Mode] Validating reference plan without invoking LLM API.`);
-    }
+  if (isDryRun) {
+    console.log(`[Dry-Run Mode] Validating reference plan without invoking LLM API.`);
+  } else if (!process.env.OPENAI_API_KEY) {
+    console.error('[FATAL] OPENAI_API_KEY is not set in environment.');
+    console.error('Create a .env file in the project root with: OPENAI_API_KEY=<your key>');
+    console.error('Or use --dry-run to validate against a reference plan without an API key.');
+    process.exit(1);
+  }
+
+  if (isDryRun) {
 
     const examplePlanPath = path.join(process.cwd(), 'examples', 'plans', 'example-plan.json');
     const rawExample = JSON.parse(fs.readFileSync(examplePlanPath, 'utf-8'));

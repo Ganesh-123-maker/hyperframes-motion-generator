@@ -24,28 +24,11 @@ export async function repairPlan(
   if (options.mockResponse) {
     rawResponseContent = options.mockResponse;
   } else if (!process.env.OPENAI_API_KEY && !options.apiKey) {
-    const repairedPlan: VideoPlan = JSON.parse(JSON.stringify(currentPlan));
-    for (const issue of issues) {
-      if (issue.category === 'contrast') {
-        repairedPlan.theme.textColor = '#FFFFFF';
-        repairedPlan.theme.backgroundColor = '#0F172A';
-        if (issue.contrastDetails?.suggestedColor) {
-          repairedPlan.theme.textColor = issue.contrastDetails.suggestedColor;
-        }
-      }
-      if (issue.category === 'layout') {
-        for (const scene of repairedPlan.scenes) {
-          if (scene.text.heading.length > 40) {
-            scene.text.heading = scene.text.heading.substring(0, 40).trim();
-          }
-          scene.visual.layout = 'centered';
-        }
-      }
-    }
-    if (isIdenticalPlan(currentPlan, repairedPlan)) {
-      repairedPlan.theme.textColor = repairedPlan.theme.textColor === '#FFFFFF' ? '#F8FAFC' : '#FFFFFF';
-    }
-    rawResponseContent = JSON.stringify(repairedPlan);
+    return {
+      ok: false,
+      error: 'OPENAI_API_KEY is not configured. Cannot repair plan without an API key. ' +
+        'Set OPENAI_API_KEY in your .env file or pass apiKey in options.'
+    };
   } else {
     try {
       const client = getOpenAIClient(options.apiKey, options.baseURL);
@@ -73,9 +56,10 @@ export async function repairPlan(
       }
       rawResponseContent = choice.message.content;
     } catch (err: any) {
-      const repairedPlan: VideoPlan = JSON.parse(JSON.stringify(currentPlan));
-      repairedPlan.theme.textColor = '#FFFFFF';
-      rawResponseContent = JSON.stringify(repairedPlan);
+      return {
+        ok: false,
+        error: `LLM repair API call failed: ${err.message || String(err)}`
+      };
     }
   }
 

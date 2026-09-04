@@ -119,8 +119,10 @@ export async function generatePlanFromBrief(
     if (options.mockResponse) {
       rawResponseContent = options.mockResponse;
     } else if (!process.env.OPENAI_API_KEY && !options.apiKey) {
-      const fallbackPlan = createRuleBasedPlanFromBrief(brief);
-      rawResponseContent = JSON.stringify(fallbackPlan);
+      throw new Error(
+        'OPENAI_API_KEY is not configured. Cannot generate a plan without an API key. ' +
+        'Set OPENAI_API_KEY in your .env file or pass apiKey in options.'
+      );
     } else {
       const client = getOpenAIClient(options.apiKey, options.baseURL);
 
@@ -147,9 +149,10 @@ export async function generatePlanFromBrief(
 
         rawResponseContent = choice.message.content;
       } catch (err: any) {
-        // If API fails, fallback cleanly to rule-based plan builder
-        const fallbackPlan = createRuleBasedPlanFromBrief(brief);
-        rawResponseContent = JSON.stringify(fallbackPlan);
+        // Propagate API errors — do NOT silently fall back to a rule-based plan
+        throw new Error(
+          `LLM API call failed during planning (attempt ${attempt}/${maxAttempts}): ${err.message || String(err)}`
+        );
       }
     }
 

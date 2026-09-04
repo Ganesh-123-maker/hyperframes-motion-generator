@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
+import '../config/env.js';
 import { generateComposition } from '../composition/generator';
 import { validateFullPlan } from '../planner/validator';
-
-dotenv.config();
 
 function printUsage() {
   console.log(`

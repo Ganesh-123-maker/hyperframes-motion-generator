@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
+import '../config/env.js';
 import { generatePlanFromBrief } from '../planner/index.js';
 import { validateFullPlan } from '../planner/validator.js';
 import { runSelfVerificationLoop } from '../repair/index.js';
 import { renderComposition } from '../render/index.js';
-
-dotenv.config();
 
 function printUsage() {
   console.log(`
@@ -106,12 +104,8 @@ async function main() {
   let runId = `run_${Date.now()}`;
 
   // 1. Initial Planning Stage
-  if (isDryRun || (!process.env.OPENAI_API_KEY && !isDryRun)) {
-    if (!process.env.OPENAI_API_KEY) {
-      console.warn('[Notice] OPENAI_API_KEY not found. Using validated reference plan for dry run.\n');
-    } else {
-      console.log('[Dry Run Mode] Using validated reference plan.\n');
-    }
+  if (isDryRun) {
+    console.log('[Dry Run Mode] Using validated reference plan.\n');
     const examplePlanPath = path.join(process.cwd(), 'examples', 'plans', 'example-plan.json');
     const raw = JSON.parse(fs.readFileSync(examplePlanPath, 'utf-8'));
     const val = validateFullPlan(raw);
@@ -120,6 +114,11 @@ async function main() {
       process.exit(1);
     }
     initialPlan = val.plan;
+  } else if (!process.env.OPENAI_API_KEY) {
+    console.error('[FATAL] OPENAI_API_KEY is not set in environment.');
+    console.error('Create a .env file in the project root with: OPENAI_API_KEY=<your key>');
+    console.error('Or use --dry-run to validate against a reference plan without an API key.');
+    process.exit(1);
   } else {
     console.log(`[Stage 1/3] Generating initial structured plan with ${planModel}...`);
     try {

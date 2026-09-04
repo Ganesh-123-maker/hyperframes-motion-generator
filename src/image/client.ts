@@ -44,8 +44,8 @@ export async function callGptImage2(
         model: model,
         prompt: prompt,
         n: 1,
-        response_format: 'b64_json',
-        size: size as any
+        size: size as any,
+        response_format: 'b64_json'
       },
       { timeout: timeoutMs }
     );
